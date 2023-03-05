@@ -1,0 +1,89 @@
+<!-- <div *ngIf="contentItem">
+  <h2>{{ contentItem.title }}</h2>
+  <img [src]="contentItem.imageUrl" alt="{{ contentItem.title }}">
+  <p>{{ contentItem.description }}</p>
+  <button (click)="downloadAsPdf()">Download as A4 PDF</button>
+  <button (click)="downloadAsMobilePdf()">Download as Mobile PDF</button>
+  <button (click)="downloadAsMobileImage()">Download as Mobile Image</button>
+  <button (click)="goBack()">Back</button>
+</div> -->
+
+<!--
+<div class="details-page" *ngIf="contentItem">
+  <div class="content-item">
+    <div class="image-wrapper">
+      <img src="{{ contentItem.imageUrl }}" alt="{{ contentItem.title }}" zoom>
+    </div>
+    <div class="details">
+      <h2>{{ contentItem.title }}</h2>
+      <p>{{ contentItem.description }}</p>
+      <div class="download-buttons">
+        <button (click)="downloadAsPdf()">Download PDF (A4)</button>
+        <button (click)="downloadAsMobilePdf()">Download PDF (Mobile)</button>
+        <button (click)="downloadAsMobileImage()">Download Mobile Image</button>
+      </div>
+      <p class="download-count">Downloads: {{ contentItem.downloadCount }}</p>
+    </div>
+  </div>
+  <div class="image-zoom">
+    <img src="{{ item.imageUrl }}" alt="{{ item.title }}" class="zoomable-image"
+         #imageRef (click)="zoomIn()" (contextmenu)="zoomOut()">
+  </div>
+</div> -->
+<div [innerHTML]="headerHtml"></div>
+
+
+
+<div class="container-lg">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <!-- Left half of card with data -->
+            <div class="col-md-6" #content [style.transform]="'scale(' + scale + ')'">
+
+                <div class="card">
+    <img class="card-img-top" src="https://via.placeholder.com/300x200.png?text=Thumbnail" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ contentItem.title }}</h5>
+      <p class="card-text">{{ contentItem.description }}</p>
+      <!-- <a href="{{ content.downloadUrl }}" class="btn btn-primary">Download</a> -->
+      <!-- <img src="{{ contentItem.imageUrl }}" class="card-img-top" alt="{{ contentItem.title }}">
+              <h5 class="card-title">{{ contentItem.title }}</h5>
+              <p class="card-text">{{ contentItem.description }}</p> -->
+              <p class="card-text"><small class="text-muted">Created at: {{ contentItem.createdAt | date }}</small></p>
+              <p class="card-text"><small class="text-muted">Updated at: {{ contentItem.updatedAt | date }}</small></p>
+
+    </div>
+  </div>
+
+            </div>
+            <!-- Right half of card with actions -->
+            <div class="col-md-6">
+              <div class="card">
+                <p class="card-text"><small class="text-muted">Download Count:</small> {{ contentItem.downloadCount }}</p>
+               <button (click)="downloadAsPdf()" class="btn btn-primary">Download PDF (A4)</button>
+        <button (click)="downloadAsMobilePdf()" class="btn btn-primary">Download PDF (Mobile)</button>
+        <button (click)="downloadAsMobileImage()" class="btn btn-primary">Download Mobile Image</button>
+  <br><br>
+        <button (click)="downloadAsPdf()" class="btn btn-primary">Total Downloads PDF (A4) : {{ contentItem.totalsDownloadsA4 }}</button>
+        <button (click)="downloadAsMobilePdf()" class="btn btn-primary">Total Downloads PDF (Mobile) : {{ contentItem.totalsDownloadsmobile }}</button>
+        <button (click)="downloadAsMobileImage()" class="btn btn-primary">Total Downloads Mobile Image : {{ contentItem.totalsDownloadsimage }}</button>
+         <br><br>
+                <p class="card-text">Zoom:</p>
+          <button class="btn btn-secondary" (click)="zoomIn()">+</button>
+          <button class="btn btn-secondary" (click)="zoomOut()">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div [innerHTML]="footerHtml"></div>

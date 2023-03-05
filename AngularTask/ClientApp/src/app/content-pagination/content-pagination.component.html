@@ -1,0 +1,5 @@
+<div class="pagination">
+  <button *ngFor="let page of pages" [class.active]="currentPage === page" (click)="paginate(page)">
+    {{ page }}
+  </button>
+</div>

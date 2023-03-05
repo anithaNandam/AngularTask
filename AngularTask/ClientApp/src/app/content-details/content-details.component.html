@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card">
+    <img class="card-img-top" src="https://via.placeholder.com/300x200.png?text=Thumbnail" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ content.title }}</h5>
+      <p class="card-text">{{ content.description }}</p>
+      <!-- <a href="{{ content.downloadUrl }}" class="btn btn-primary">Download</a> -->
+
+      <button (click)="downloadA4Pdf()">Download A4 PDF</button>
+  <button (click)="downloadMobilePdf()">Download Mobile PDF</button>
+  <button (click)="downloadMobileImage()">Download Mobile Image</button>
+    </div>
+  </div>
+  <button class="btn btn-link" (click)="goBack()">Back</button>
+</div>
