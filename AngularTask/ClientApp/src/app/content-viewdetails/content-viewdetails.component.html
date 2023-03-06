@@ -63,17 +63,18 @@
             <div class="col-md-6">
               <div class="card">
                 <p class="card-text"><small class="text-muted">Download Count:</small> {{ contentItem.downloadCount }}</p>
-               <button (click)="downloadAsPdf()" class="btn btn-primary">Download PDF (A4)</button>
-        <button (click)="downloadAsMobilePdf()" class="btn btn-primary">Download PDF (Mobile)</button>
-        <button (click)="downloadAsMobileImage()" class="btn btn-primary">Download Mobile Image</button>
+               <button (click)="downloadAsPdf()" class="btn btn-primary mb-20">Download PDF (A4)</button>
+        <button (click)="downloadAsMobilePdf()" class="btn btn-primary mb-20">Download PDF (Mobile)</button>
+        <button (click)="downloadAsMobileImage()" class="btn btn-primary mb-20">Download Mobile Image</button>
   <br><br>
-        <button (click)="downloadAsPdf()" class="btn btn-primary">Total Downloads PDF (A4) : {{ contentItem.totalsDownloadsA4 }}</button>
-        <button (click)="downloadAsMobilePdf()" class="btn btn-primary">Total Downloads PDF (Mobile) : {{ contentItem.totalsDownloadsmobile }}</button>
-        <button (click)="downloadAsMobileImage()" class="btn btn-primary">Total Downloads Mobile Image : {{ contentItem.totalsDownloadsimage }}</button>
+        <button (click)="downloadAsPdf()" class="btn btn-secondary mb-20">Total Downloads PDF (A4) : {{ contentItem.totalsDownloadsA4 }}</button>
+        <button (click)="downloadAsMobilePdf()" class="btn btn-secondary mb-20">Total Downloads PDF (Mobile) : {{ contentItem.totalsDownloadsmobile }}</button>
+        <button (click)="downloadAsMobileImage()" class="btn btn-secondary mb-20">Total Downloads Mobile Image : {{ contentItem.totalsDownloadsimage }}</button>
          <br><br>
                 <p class="card-text">Zoom:</p>
-          <button class="btn btn-secondary" (click)="zoomIn()">+</button>
-          <button class="btn btn-secondary" (click)="zoomOut()">-</button>
+          <button style="width:50%;margin-left:50px" class="btn btn-secondary mb-20 " (click)="zoomIn()">+</button>
+
+          <button style="width:50%;margin-left:50px" class="btn btn-secondary mb-20" (click)="zoomOut()">-</button>
               </div>
             </div>
           </div>

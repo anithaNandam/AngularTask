@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace AngularTask.Interfaces
 {
-    public class IContentRepository   
+    public interface IContentRepository   
     {
-        //Task<List<ContentItem>> GetRecordsAsync(int page, int pageSize);
-        //Task<ContentItem> GetRecordAsync(int id);
-        //Task<int> GetTotalRecordCountAsync();
-        //Task AddDownloadAsync(int recordId, string downloadType);
+        Task<List<ContentItem>> GetContentItemsAsync(int pageNumber, int pageSize);
+        Task<ContentItem> GetContentItemAsync(int id);
+        Task<int> AddContentItemAsync(ContentItem contentItem);
+        Task UpdateContentItemAsync(ContentItem contentItem);
+        Task DeleteContentItemAsync(ContentItem contentItem);
     }
 }

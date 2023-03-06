@@ -1,5 +1,7 @@
 using AngularTask.Data;
+using AngularTask.Interfaces;
 using AngularTask.Models;
+using AngularTask.Repository;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Builder;
@@ -51,6 +53,7 @@ namespace AngularTask
             services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             // Register ContentService
+            services.AddScoped<IContentRepository, ContentRepository>();
             services.AddScoped<ContentService>();
             services.AddSwaggerGen(c =>
             {
